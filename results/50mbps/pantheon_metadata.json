@@ -1,17 +1,17 @@
 {
-    "append_mm_cmds": "--uplink-queue=droptail --uplink-queue-args=packets=300",
     "cc_schemes": [
-        "bbr"
+        "bbr",
+        "cubic",
+        "vegas"
     ],
     "downlink_trace": "50mbps.trace",
     "flows": 1,
     "git_summary": "branch: main @ 3a17493e0c8def7f6ebbaf1b0eafbc69365fea09\n",
     "interval": 0,
     "mode": "local",
-    "prepend_mm_cmds": "mm-delay 40",
     "random_order": false,
     "run_times": 1,
-    "runtime": 30,
+    "runtime": 60,
     "start_run_id": 1,
     "uplink_trace": "50mbps.trace"
 }
