@@ -1,6 +1,6 @@
 git clone https://github.com/StanfordSNR/pantheon.git 
 
-Cd pantheon 
+cd pantheon 
 
 git submodule update --init –recursive 
 
@@ -16,19 +16,19 @@ make
 
 sudo make install 
 
-Sudo net.ipv4.ip_forward=1 
+sudo net.ipv4.ip_forward=1 
 
 mm-delay 50 
 
 Cd 
 
-Cd pantheon 
+cd pantheon 
 
-Python src/wrappers/cubic.py deps 
+python src/wrappers/cubic.py deps 
 
-Python src/wrappers/bbr.py deps 
+python src/wrappers/bbr.py deps 
 
-Python src/wrappers/vegas.py deps 
+python src/wrappers/vegas.py deps 
 
 python src/experiments/setup.py --install-deps --schemes "cubic bbr vegas" 
 
@@ -38,10 +38,10 @@ python src/experiments/test.py local --schemes "cubic bbr vegas" --data-dir data
 
 python src/analysis/analyze.py --data-dir data 
 
-PART B 
+**PART B** 
 
-High bandwidth, low latency (50 Mbps / 10 ms) 
-
+**High bandwidth, low latency (50 Mbps / 10 ms) 
+**
  Create a traces floder in pantheon 
 
 Create a file name 50mbps.trace 
@@ -62,14 +62,14 @@ cd ~/pantheon python src/experiments/test.py local
 
 --prepend-mm-cmds "mm-delay 5" 
 
-For graphs 
-
+**For graphs 
+**
 python src/analysis/analyze.py --data-dir results_50mbps_10ms 
 
  
 
-Low bandwidth, high latency (1 Mbps / 200 ms) 
-
+**Low bandwidth, high latency (1 Mbps / 200 ms) 
+**
 Create a file name 1mbps.trace 
 
 cd ~/pantheon python src/experiments/test.py local  
@@ -88,8 +88,8 @@ cd ~/pantheon python src/experiments/test.py local
 
 --prepend-mm-cmds "mm-delay 100" 
 
-For graphs 
-
+**For graphs 
+**
 python src/analysis/analyze.py --data-dir results_1mbps_200ms 
 
  
